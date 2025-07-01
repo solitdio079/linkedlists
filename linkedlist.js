@@ -6,7 +6,10 @@ function createLinkedList(headValue=null){
     const append = (value) => {
         const newNode = createNode(value)
         let tmp = head 
-        if(head === null) head = newNode
+        if(head.value === null)
+            head = newNode 
+           
+        
         while(tmp.nextNode !== null){
             tmp = tmp.nextNode
         }
@@ -138,7 +141,7 @@ function createLinkedList(headValue=null){
             listString += `(${tmp.value}) -> `
             tmp = tmp.nextNode
         }
-        console.log(listString + "null")
+        return listString + "null"
     }
 
 
@@ -151,25 +154,7 @@ function createNode(value=null,nextNode=null){
     return {value, nextNode}
 }
 
-const newList = createLinkedList(30)
-newList.prepend(20)
-newList.prepend(10)
-newList.append(40)
-console.log(newList.size())
 
 
-newList.toString()
-//newList.pop() 
-newList.insertAt(80,1)
-newList.insertAt(7,3)
-
-newList.toString()
-newList.removeAt(5)
-newList.toString()
-
-
-console.log("Finder",newList.find(20))
-console.log("Check",newList.contains(50))
-
-console.log("Size", newList.size())
+export default createLinkedList
 
