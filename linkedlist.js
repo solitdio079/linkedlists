@@ -16,6 +16,7 @@ function createLinkedList(headValue=null){
         if(tmp !== null ) {tmp.nextNode = newNode}
        
     }
+    
 
 
     const size = () => {
